@@ -1,68 +1,94 @@
-# CodeIgniter 4 Application Starter
+College Review System
+Welcome to the College Review System! This project is designed to allow students to review and rate colleges based on various criteria such as academics, facilities, faculty, and more.
 
-## What is CodeIgniter?
+Table of Contents
+About the Project
+Features
+Technologies Used
+Installation
+Usage
+Database Structure
+Contributing
+License
+Contact
+About the Project
+The College Review System is a web application where students can:
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Register and log in.
+Write reviews for their colleges.
+Rate colleges based on different criteria.
+Browse and read reviews written by other students.
+Filter and search for colleges based on ratings and reviews.
+Features
+User Authentication: Secure login and registration system.
+Review System: Users can post, edit, and delete their reviews.
+Rating System: Users can rate colleges on different aspects.
+Search & Filter: Easily search and filter colleges based on ratings and reviews.
+Admin Panel: Manage users, reviews, and college data.
+Technologies Used
+Frontend:
+HTML/CSS
+JavaScript (Optional: jQuery or other JS libraries)
+Backend:
+PHP
+MySQL
+Additional Libraries/Tools:
+Bootstrap (for responsive design)
+PHPMailer (for email notifications)
+Summernote (for rich text editing in reviews)
+FontAwesome (for icons)
+Installation
+To get a local copy up and running, follow these steps:
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Prerequisites
+XAMPP/WAMP: You need to have a local server environment installed (XAMPP, WAMP, or similar).
+Composer: Optional if using dependencies like PHPMailer.
+Steps
+Clone the Repository:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+bash
+Copy code
+git clone [https://github.com/yourusername/college-review-system.git](https://github.com/Nihalbagul/collegereview)
+Move to Project Directory:
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+bash
+Copy code
+cd college-review-system
+Database Setup:
 
-## Installation & updates
+Create a MySQL database named college_reviews.
+Import the provided SQL file (database/college_reviews.sql) into your database.
+Configure the Database:
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Open the config.php file.
+Update the database credentials:
+php
+Copy code
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'college_reviews');
+Run the Application:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Place the project folder in your server's htdocs (for XAMPP) or www (for WAMP) directory.
+Open your browser and navigate to http://localhost/college-review-system.
+Usage
+User Registration/Login: Users can sign up and log in to the system.
+Add Reviews: Registered users can add reviews for colleges.
+Browse Reviews: Users can view, search, and filter reviews.
+Admin Panel: Admins can manage users, reviews, and colleges from the admin dashboard.
+Database Structure
+Users Table: Stores user information (ID, username, email, password, role).
+Colleges Table: Stores college information (ID, name, location, courses offered).
+Reviews Table: Stores reviews (ID, user_id, college_id, rating, review_text).
+Ratings Table: Stores ratings for different aspects (ID, review_id, rating_category, rating_value).
+Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Fork the Project.
+Create your Feature Branch (git checkout -b feature/AmazingFeature).
+Commit your Changes (git commit -m 'Add some AmazingFeature').
+Push to the Branch (git push origin feature/AmazingFeature).
+Open a Pull Request.
+License
+Distributed under the MIT License. See LICENSE for more information.
