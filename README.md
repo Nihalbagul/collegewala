@@ -48,7 +48,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone [https://github.com/yourusername/college-review-system.git](https://github.com/Nihalbagul/collegereview)
+git clone [https://github.com/Nihalbagul/collegereview]
 Move to Project Directory:
 
 bash
