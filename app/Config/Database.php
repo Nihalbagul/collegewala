@@ -29,11 +29,11 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => 'root',
         'password'     => '',
-        'database'     => 'collegerev',
+        'database'     => 'collegerevs',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
-        'DBDebug'      => false,
+        'DBDebug'      => (ENVIRONMENT !== 'production'),
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
@@ -49,6 +49,7 @@ class Database extends Config
             'time'     => 'H:i:s',
         ],
     ];
+    
 
     //    /**
     //     * Sample database connection for SQLite3.

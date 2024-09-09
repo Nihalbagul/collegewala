@@ -5,6 +5,7 @@
  * CHECK PHP VERSION
  *---------------------------------------------------------------
  */
+// Ensure this line is present
 
 $minPhpVersion = '8.1'; // If you update this, don't forget to update `spark`.
 if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
@@ -47,6 +48,7 @@ if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
 // This is the line that might need to be changed, depending on your folder structure.
 require FCPATH . '../app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
+require_once FCPATH . '../vendor/autoload.php'; // Ensure this line is present
 
 $paths = new Config\Paths();
 

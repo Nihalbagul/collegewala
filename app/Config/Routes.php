@@ -6,23 +6,15 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // $routes->get('/', 'Home::index');
-$routes->get('/', 'AuthController::login');
-$routes->get('/register', 'AuthController::register');
-$routes->post('/auth/login', 'AuthController::loginPost');
-$routes->post('/auth/register', 'AuthController::registerPost');
+$routes->get('login/mobile', 'Login::mobileLogin');
+$routes->post('login/processMobileLogin', 'Login::processMobileLogin');
 
-$routes->get('/colleges', 'CollegeController::index');
-$routes->get('/colleges/add', 'CollegeController::addCollege');
-$routes->post('/colleges/add', 'CollegeController::saveCollege');
+$routes->get('login/email', 'Login::emailLogin');
+$routes->post('login/process_email_login', 'Login::processEmailLogin');
+$routes->get('verify_mobile_otp/(:num)', 'Login::showVerifyMobileOTP/$1');
+$routes->post('verify_mobile_otp/(:num)', 'Login::verifyMobileOTP/$1');
 
-$routes->get('/categories', 'CategoryController::index');
-$routes->get('/categories/add', 'CategoryController::addCategory');
-$routes->post('/categories/add', 'CategoryController::saveCategory');
-
-$routes->get('/courses', 'CourseController::index');
-$routes->get('/courses/add', 'CourseController::addCourse');
-$routes->post('/courses/add', 'CourseController::saveCourse');
-
-$routes->get('/scholarships', 'ScholarshipController::index');
-$routes->get('/scholarships/add', 'ScholarshipController::addScholarship');
-$routes->post('/scholarships/add', 'ScholarshipController::saveScholarship');
+$routes->get('verify_email_otp/(:num)', 'Login::showVerifyEmailOTP/$1');
+$routes->post('verify_email_otp/(:num)', 'Login::verifyEmailOTP/$1');
+$routes->get('admin/dashboard', 'Admin::dashboard', ['filter' => 'adminAuth']);
+$routes->post('admin/logout', 'Login::logout');
